@@ -16,6 +16,10 @@
             overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
+        h1, p {
+            margin: 20px 0;
+        }
+
         h1 {
             font-size: 2.5em;
             color: #333;
@@ -24,6 +28,81 @@
         p {
             font-size: 1.5em;
             color: #666;
+        }
+
+        img {
+            margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+
+        /* General animation styles */
+        .section {
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+        }
+
+        /* Slide-in from left */
+        .slide-left {
+            transform: translateX(-100px);
+        }
+
+        .slide-left.visible {
+            transform: translateX(0);
+        }
+
+        /* Slide-in from right */
+        .slide-right {
+            transform: translateX(100px);
+        }
+
+        .slide-right.visible {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="section slide-left">
+        <h1>mou aresoun ta makaronia</h1>
+    </div>
+    <div class="section slide-right">
+        <p>pitogyrakia</p>
+    </div>
+    <div class="section">
+        <!-- Replace the src attribute with your image link -->
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWoC2NsBIGQywgxhPa-zPQDAwm0AvgyAaw-w&s" alt="makaronia">
+    </div>
+    <div class="section slide-left">
+        <p>ksero na mageireuw</p></p>
+    </div>
+    <div class="section slide-right">
+        <p>eimai aristos mathitis</p>
+    </div>
+
+    <script>
+        const sections = document.querySelectorAll('.section');
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
+#666;
         }
 
         img {
