@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kourouzidis</title>
     <style>
         /* Import a custom font */
@@ -11,6 +13,7 @@
             background-color: #f9f9f9;
             margin: 20px;
             text-align: center;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
         h1 {
@@ -30,12 +33,46 @@
             border: 2px solid #ccc;
             border-radius: 8px;
         }
+
+        /* Animation styles */
+        .section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
-    <h1>mou aresoun ta makaronia</h1>
-    <p>pitogyrakia</p>
-    <!-- Replace the src attribute with your image link -->
-    <img src="https://www.twopeasandtheirpod.com/wp-content/uploads/2023/07/Chicken-Gyros-0666.jpg" alt="to agapimeno mou faghto">
+    <div class="section">
+        <h1>mou aresoun ta makaronia</h1>
+    </div>
+    <div class="section">
+        <p>pitogyrakia</p>
+    </div>
+    <div class="section">
+        <!-- Replace the src attribute with your image link -->
+        <img src="https://www.twopeasandtheirpod.com/wp-content/uploads/2023/07/Chicken-Gyros-0666.jpg" alt="Delicious Food">
+    </div>
+
+    <script>
+        const sections = document.querySelectorAll('.section');
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
