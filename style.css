@@ -1,24 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    margin: 20px;
+    text-align: center;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
-.section {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f3f3f3;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+
+h1, p {
+    margin: 20px 0;
 }
-.section.visible {
-    opacity: 1;
-    transform: translateY(0);
+
+h1 {
+    font-size: 2.5em;
+    color: #333;
 }
-.image {
+
+p {
+    font-size: 1.5em;
+    color: #666;
+}
+
+img {
+    margin-top: 20px;
     max-width: 100%;
     height: auto;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+}
+
+/* General animation styles */
+.section {
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.section.visible {
+    opacity: 1;
+}
+
+/* Slide-in from left */
+.slide-left {
+    transform: translateX(-100px);
+}
+
+.slide-left.visible {
+    transform: translateX(0);
+}
+
+/* Slide-in from right */
+.slide-right {
+    transform: translateX(100px);
+}
+
+.slide-right.visible {
+    transform: translateX(0);
 }
