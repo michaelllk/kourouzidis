@@ -4,70 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kourouzidis</title>
-    <style>
-        /* Import a custom font */
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f9f9f9;
-            margin: 20px;
-            text-align: center;
-            overflow-x: hidden; /* Prevent horizontal scrolling */
-        }
-
-        h1, p {
-            margin: 20px 0;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            color: #333;
-        }
-
-        p {
-            font-size: 1.5em;
-            color: #666;
-        }
-
-        img {
-            margin-top: 20px;
-            max-width: 100%;
-            height: auto;
-            border: 2px solid #ccc;
-            border-radius: 8px;
-        }
-
-        /* General animation styles */
-        .section {
-            opacity: 0;
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        .section.visible {
-            opacity: 1;
-        }
-
-        /* Slide-in from left */
-        .slide-left {
-            transform: translateX(-100px);
-        }
-
-        .slide-left.visible {
-            transform: translateX(0);
-        }
-
-        /* Slide-in from right */
-        .slide-right {
-            transform: translateX(100px);
-        }
-
-        .slide-right.visible {
-            transform: translateX(0);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <div class="section me">
+        <img src="kourouzidis.png" alt="me" />
+        <div class="spacer"></div>
+        <p>Hey, my name is kourouzidis</p>
+    </div>
+
     <div class="section slide-left">
         <h1>mou aresoun ta makaronia</h1>
     </div>
@@ -75,7 +21,7 @@
         <p>pitogyrakia</p>
     </div>
     <div class="section">
-        <img src="https://example.com/sample-image.jpg" alt="Delicious Food">
+        <img src="delicious_food.jpeg" alt="Delicious Food" />
     </div>
     <div class="section slide-left">
         <p>ksero na mageireuw</p>
@@ -83,21 +29,5 @@
     <div class="section slide-right">
         <p>eimai aristos mathitis</p>
     </div>
-
-    <script>
-        const sections = document.querySelectorAll('.section');
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-    </script>
 </body>
 </html>
