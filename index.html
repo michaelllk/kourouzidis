@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kourouzidis</title>
-    <link rel="stylesheet" href="style.css" />
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            background-color: #f9f9f9;
             text-align: center;
+            background-color: #f9f9f9;
         }
 
         .section {
@@ -18,11 +17,12 @@
         }
 
         h1 {
-            font-size: 2.5em;
+            font-size: 2em;
+            margin-bottom: 10px;
         }
 
         ul {
-            list-style-type: none; /* Remove default bullets */
+            list-style-type: none; /* Remove bullets */
             padding: 0;
         }
 
@@ -36,48 +36,24 @@
             height: auto;
             border: 2px solid #ccc;
             border-radius: 8px;
+            margin: 20px 0;
         }
 
         .text-box {
             display: inline-block;
             padding: 10px 20px;
-            margin: 10px;
             border: 2px solid #ccc;
             border-radius: 8px;
             background-color: #fff;
+            margin: 10px 0;
         }
 
-        .slide-left {
-            animation: slide-left 2s forwards;
+        .moving-text {
+            display: inline-block;
+            animation: slide-right-to-left 5s linear infinite;
         }
 
-        .slide-right {
-            animation: slide-right 2s forwards;
-        }
-
-        #moving-text {
-            animation: move-right-to-left 5s linear infinite;
-        }
-
-        @keyframes slide-left {
-            from {
-                transform: translateX(100%);
-            }
-            to {
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slide-right {
-            from {
-                transform: translateX(-100%);
-            }
-            to {
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes move-right-to-left {
+        @keyframes slide-right-to-left {
             0% {
                 transform: translateX(100%);
             }
@@ -88,12 +64,13 @@
     </style>
 </head>
 <body>
-    <div class="section me">
-        <img src="kourouzidis.png" alt="me" />
-        <div class="spacer"></div>
+    <!-- Image of yourself -->
+    <div class="section">
+        <img src="kourouzidis.png" alt="Me">
         <p>kalhmera kosme!!</p>
     </div>
 
+    <!-- List of favorite foods -->
     <div class="section">
         <h1>My Favorite Foods:</h1>
         <ul>
@@ -103,22 +80,18 @@
         </ul>
     </div>
 
+    <!-- Food image -->
     <div class="section">
-        <img src="delicious_food.jpeg" alt="Delicious Food" />
+        <img src="delicious_food.jpeg" alt="Delicious Food">
     </div>
 
-    <div class="section text-box" id="moving-text">
-        <p>ksero na mageireuw</p>
+    <!-- Text boxes -->
+    <div class="section text-box moving-text">
+        ksero na mageireuw
     </div>
     <div class="section text-box">
-        <p>eimai enas aristos mathitis</p>
+        eimai enas aristos mathitis
     </div>
 </body>
-</html>
-a mageireuw</p>
-    </div>
-    <div class="section slide-right">
-        <p>eimai enas aristos mathitis</p>
-    </div>
-</body>
-</html>
+    </html>
+    
