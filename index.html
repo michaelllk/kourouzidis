@@ -5,7 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kourouzidis</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .section {
+            margin: 20px 0;
+        }
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        ul {
+            list-style-type: none; /* Remove default bullets */
+            padding: 0;
+        }
+
+        li {
+            font-size: 1.2em;
+            margin: 5px 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .text-box {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+
+        .slide-left {
+            animation: slide-left 2s forwards;
+        }
+
+        .slide-right {
+            animation: slide-right 2s forwards;
+        }
+
+        #moving-text {
+            animation: move-right-to-left 5s linear infinite;
+        }
+
+        @keyframes slide-left {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slide-right {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes move-right-to-left {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="section me">
@@ -14,17 +94,28 @@
         <p>kalhmera kosme!!</p>
     </div>
 
-    <div class="section slide-left">
-        <h1>mou aresoun ta makaronia</h1>
+    <div class="section">
+        <h1>My Favorite Foods:</h1>
+        <ul>
+            <li>Pitogyrakia</li>
+            <li>Makaronia</li>
+            <li>Souvlaki</li>
+        </ul>
     </div>
-    <div class="section slide-right">
-        <p>pitogyrakia</p>
-    </div>
+
     <div class="section">
         <img src="delicious_food.jpeg" alt="Delicious Food" />
     </div>
-    <div class="section slide-left">
+
+    <div class="section text-box" id="moving-text">
         <p>ksero na mageireuw</p>
+    </div>
+    <div class="section text-box">
+        <p>eimai enas aristos mathitis</p>
+    </div>
+</body>
+</html>
+a mageireuw</p>
     </div>
     <div class="section slide-right">
         <p>eimai enas aristos mathitis</p>
