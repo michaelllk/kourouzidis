@@ -24,7 +24,7 @@
         }
 
         ul {
-            list-style-type: none; /* Remove bullets, < tf is this */
+            list-style-type: none; /* Remove bullets */
             padding: 0;
         }
 
@@ -50,21 +50,6 @@
             margin: 10px 0;
         }
 
-        .moving-text {
-            display: inline-block;
-            animation: slide-right-to-left 5s linear infinite;
-        }
-
-        @keyframes slide-right-to-left {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-
-        /* GitHub logo styling */
         .github-logo {
             position: fixed;
             bottom: 20px;
@@ -76,6 +61,13 @@
         .github-logo img {
             width: 100%;
             height: 100%;
+            border: none; /* Remove box around the logo */
+        }
+
+        /* Slightly larger "kalhmera kosme!!" text */
+        .welcome-text {
+            font-size: 1.5em;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -83,7 +75,7 @@
     <!-- kourou image -->
     <div class="section">
         <img src="kourouzidis.png" alt="Me">
-        <p>kalhmera kosme!!</p>
+        <p class="welcome-text">kalhmera kosme!!</p>
     </div>
 
     <!-- List of favorite foods -->
@@ -102,8 +94,8 @@
         <img src="delicious_food.jpeg" alt="the miracle">
     </div>
 
-    <!-- Text boxes -->
-    <div class="section text-box moving-text">
+    <!-- Text boxes (fixed position, no animation) -->
+    <div class="section text-box">
         ksero na mageireuw
     </div>
     <div class="section text-box">
@@ -111,7 +103,7 @@
     </div>
 
     <!-- GitHub logo -->
-    <a href="https://github.com" class="github-logo" target="_blank">
+    <a href="https://michaelllk.github.io/kourouzidis/" class="github-logo" target="_blank">
         <img src="github_logo.png" alt="GitHub Logo">
     </a>
 </body>
