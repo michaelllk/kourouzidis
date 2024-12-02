@@ -10,6 +10,8 @@
             margin: 20px;
             text-align: center;
             background-color: #f9f9f9;
+            position: relative;
+            min-height: 100vh;
         }
 
         .section {
@@ -22,7 +24,7 @@
         }
 
         ul {
-            list-style-type: none; /* Remove bullets */ /* << tf is this */
+            list-style-type: none; /* Remove bullets, < tf is this */
             padding: 0;
         }
 
@@ -61,10 +63,24 @@
                 transform: translateX(-100%);
             }
         }
+
+        /* GitHub logo styling */
+        .github-logo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .github-logo img {
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body>
-    <!-- kourou image-->
+    <!-- kourou image -->
     <div class="section">
         <img src="kourouzidis.png" alt="Me">
         <p>kalhmera kosme!!</p>
@@ -93,6 +109,10 @@
     <div class="section text-box">
         eimai enas aristos mathitis
     </div>
+
+    <!-- GitHub logo -->
+    <a href="https://github.com" class="github-logo" target="_blank">
+        <img src="github_logo.png" alt="GitHub Logo">
+    </a>
 </body>
-    </html>
-    
+</html>
